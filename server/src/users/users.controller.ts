@@ -33,9 +33,8 @@ export class UsersController {
     if (!user) {
       throw new NotFoundException('User not found');
     }
-    //@ts-ignore
     const role = user.roleId === 1 ? 'admin' : 'user'
-    //@ts-ignore
+ 
     return { id: user._id, name: user.name, email: user.email, surname: user.surname, role };
   }
   @Get('admin')
@@ -50,7 +49,7 @@ export class UsersController {
   ) {
     const [users, total] = await this.usersService.getAllUsers(page, limit);
 
-    // @ts-ignore
+//TODO move to service (Best practice would be to move this to a service since it is responsible for the business logic)
     const totalPages = Math.ceil(total / limit);
 
     return {
