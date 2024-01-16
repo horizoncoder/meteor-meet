@@ -10,7 +10,7 @@ import { AuthModule } from "../auth/auth.module";
 @Module({
     imports: [
         MongooseModule.forFeature([{ name: 'user', schema: UserSchema }]),
-        forwardRef(() => AuthModule), // forwardRef для разрешения циклической зависимости
+        forwardRef(() => AuthModule), 
     ],
     controllers: [UsersController],
     providers: [UsersService],
