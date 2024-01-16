@@ -14,7 +14,7 @@ import {MeetsModule} from "./meets/meets.module";
 
 @Module({
   imports: [
-    ConfigModule.forRoot(), // Добавьте ConfigModule
+    ConfigModule.forRoot(), 
     UsersModule,
     RolesModule,
     OrganizationsModule,
@@ -22,7 +22,7 @@ import {MeetsModule} from "./meets/meets.module";
     AuthModule,
     LobbyModule,
     MongooseModule.forRoot(
-        //database url string
+        //TODO move to env 
         'mongodb+srv://idbelimenko:meet19092001@cluster0.jhwargb.mongodb.net/'
     ),
   ],
